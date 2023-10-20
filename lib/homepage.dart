@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:video_call_firebase1/videocall.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -37,7 +38,14 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 15,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                      builder: (context) => const VideoCall(
+                            meetingid: "12345",
+                          )),
+                );
+              },
               child: Container(
                 height: 30,
                 width: 100,
