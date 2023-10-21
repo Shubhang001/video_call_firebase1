@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:video_call_firebase1/group_call.dart';
 import 'package:video_call_firebase1/videocall.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -41,9 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                      builder: (context) => const VideoCall(
-                            meetingid: "12345",
-                          )),
+                      builder: (context) => const GroupCallPage()),
                 );
               },
               child: Container(

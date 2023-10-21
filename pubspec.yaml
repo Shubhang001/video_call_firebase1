@@ -43,6 +43,7 @@ dependencies:
   google_sign_in: ^6.1.5
   cloud_firestore: ^4.11.0
   flutter_signin_button: ^2.0.0
+  zego_express_engine: ^3.9.0
 
 dev_dependencies:
   flutter_test:
