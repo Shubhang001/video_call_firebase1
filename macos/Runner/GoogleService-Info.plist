@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyB6Ii_CQrbS7KPvgLrq5Gt-OqbWlD18gPk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1027870333224</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.videoCallFirebase1.RunnerTests</string>
+	<key>PROJECT_ID</key>
+	<string>zegocloud-videocall-7acba</string>
+	<key>STORAGE_BUCKET</key>
+	<string>zegocloud-videocall-7acba.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1027870333224:ios:927bdd2cfbd200b244981d</string>
+</dict>
+</plist>

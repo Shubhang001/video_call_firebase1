@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1027870333224",
+    "project_id": "zegocloud-videocall-7acba",
+    "storage_bucket": "zegocloud-videocall-7acba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1027870333224:android:3ea0fcad54a35e2744981d",
+        "android_client_info": {
+          "package_name": "com.example.video_call_firebase1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWwc0xKPWmUrte5t2U4uDsSv8H8-2xGNE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
