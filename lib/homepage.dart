@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:video_call_firebase1/vc.dart';
-import 'package:video_call_firebase1/videocall.dart';
 import 'package:zego_uikit_prebuilt_call/zego_uikit_prebuilt_call.dart';
 import 'package:zego_uikit_signaling_plugin/zego_uikit_signaling_plugin.dart';
 
@@ -71,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                      builder: (context) => VideoCall(
+                      builder: (context) => Vc(
                           navigatorKey: widget.navigatorKey,
                           localUsername: userid.text.toString(),
                           localUserId: userid.text.toString(),

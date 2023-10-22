@@ -26,8 +26,8 @@ class _VcState extends State<Vc> {
           1219133755, // Fill in the appID that you get from ZEGOCLOUD Admin Console.
       appSign:
           "4d20c8e94ac1dcc5b470d261999892b44157315ec4de62ea8648a90319f11414", // Fill in the appSign that you get from ZEGOCLOUD Admin Console.
-      userID: "Suharsh",
-      userName: "Suharsh",
+      userID: widget.localUserId,
+      userName: widget.localUsername,
       callID: widget.roomId,
       // You can also use groupVideo/groupVoice/oneOnOneVoice to make more types of calls.
       config: ZegoUIKitPrebuiltCallConfig.oneOnOneVideoCall()
