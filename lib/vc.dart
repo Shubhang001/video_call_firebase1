@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:zego_uikit_prebuilt_call/zego_uikit_prebuilt_call.dart';
 import 'package:zego_uikit_signaling_plugin/zego_uikit_signaling_plugin.dart';
 
-class VideoCall extends StatefulWidget {
-  const VideoCall(
+class Vc extends StatefulWidget {
+  const Vc(
       {super.key,
       required this.roomId,
       required this.localUserId,
@@ -16,39 +15,24 @@ class VideoCall extends StatefulWidget {
   final GlobalKey<NavigatorState> navigatorKey;
 
   @override
-  State<VideoCall> createState() => _VideoCallState();
+  State<Vc> createState() => _VcState();
 }
 
-class _VideoCallState extends State<VideoCall> {
-  ZegoUIKitPrebuiltCallController? callController;
-
-  @override
-  void initState() {
-    super.initState();
-    callController = null;
-  }
-
+class _VcState extends State<Vc> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      navigatorKey: widget.navigatorKey,
-      home: Scaffold(
-        body: Container(),
-      ),
-    );
-  }
-}
-
-
-/*ZegoUIKitPrebuiltCall(
+    return ZegoUIKitPrebuiltCall(
       appID:
           1219133755, // Fill in the appID that you get from ZEGOCLOUD Admin Console.
       appSign:
           "4d20c8e94ac1dcc5b470d261999892b44157315ec4de62ea8648a90319f11414", // Fill in the appSign that you get from ZEGOCLOUD Admin Console.
-      userID: widget.localUserId,
-      userName: widget.localUsername,
+      userID: "Suharsh",
+      userName: "Suharsh",
       callID: widget.roomId,
       // You can also use groupVideo/groupVoice/oneOnOneVoice to make more types of calls.
       config: ZegoUIKitPrebuiltCallConfig.oneOnOneVideoCall()
         ..onOnlySelfInRoom = (context) => Navigator.of(context).pop(),
-    );*/
+      plugins: [ZegoUIKitSignalingPlugin()],
+    );
+  }
+}

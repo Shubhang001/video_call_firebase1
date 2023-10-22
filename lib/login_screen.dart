@@ -11,10 +11,13 @@ import 'package:video_call_firebase1/homepage.dart';
 import 'package:video_call_firebase1/signup_screen.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  final GlobalKey<NavigatorState> navigatorKey;
+  const LoginScreen({Key? key, required this.navigatorKey}) : super(key: key);
 
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  State<LoginScreen> createState() {
+    return _LoginScreenState();
+  }
 }
 
 class _LoginScreenState extends State<LoginScreen> {
@@ -158,7 +161,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => MyHomePage()));
+                                          builder: (context) => MyHomePage(
+                                              navigatorKey:
+                                                  widget.navigatorKey)));
                                 }
                               } catch (e) {
                                 print(e.toString());
@@ -243,7 +248,9 @@ class _LoginScreenState extends State<LoginScreen> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => MyHomePage()));
+                                    builder: (context) => MyHomePage(
+                                          navigatorKey: widget.navigatorKey,
+                                        )));
                           },
                         ),
                       ),
@@ -267,7 +274,9 @@ class _LoginScreenState extends State<LoginScreen> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => SignupScreen()));
+                                      builder: (context) => SignupScreen(
+                                            navigatorKey: widget.navigatorKey,
+                                          )));
                             },
                             child: Text(
                               "Register",
