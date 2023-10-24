@@ -8,7 +8,6 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:video_call_firebase1/auth_service.dart';
 import 'package:video_call_firebase1/firsthomepage.dart';
-import 'package:video_call_firebase1/homepage.dart';
 import 'package:video_call_firebase1/login_screen.dart';
 
 class SignupScreen extends StatefulWidget {

@@ -49,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 15,
             ),
             SizedBox(
-              height: 200,
+              height: 80,
               child: ZegoSendCallInvitationButton(
                 onPressed: (code, message, p2) => Navigator.of(context).push(
                     MaterialPageRoute(
@@ -83,7 +83,48 @@ class _MyHomePageState extends State<MyHomePage> {
     /// when app's user is logged in or re-logged in
     /// We recommend calling this method as soon as the user logs in to your app.
     ZegoUIKitPrebuiltCallInvitationService().init(
-        events: ZegoUIKitPrebuiltCallInvitationEvents(),
+        events: ZegoUIKitPrebuiltCallInvitationEvents(
+          onInvitationUserStateChanged:
+              (ZegoSignalingPluginInvitationUserInfo) {
+            ///  Add your custom logic here.
+          },
+          onIncomingCallDeclineButtonPressed: () {
+            ///  Add your custom logic here.
+          },
+          onIncomingCallAcceptButtonPressed: () => Vc(
+              navigatorKey: widget.navigatorKey,
+              localUsername: userid.text.toString(),
+              localUserId: userid.text.toString(),
+              roomId: "12345"),
+          onIncomingCallReceived: (
+            String callID,
+            ZegoCallUser caller,
+            ZegoCallType callType,
+            List<ZegoCallUser> callees,
+            String customData,
+          ) {
+            ///  Add your custom logic here.
+          },
+          onIncomingCallCanceled: (String callID, ZegoCallUser caller) {
+            ///  Add your custom logic here.
+          },
+          onIncomingCallTimeout: (String callID, ZegoCallUser caller) {
+            ///  Add your custom logic here.
+          },
+          onOutgoingCallCancelButtonPressed: () {
+            ///  Add your custom logic here.
+          },
+          onOutgoingCallAccepted: (String callID, ZegoCallUser callee) {
+            ///  Add your custom logic here.
+          },
+          onOutgoingCallRejectedCauseBusy:
+              (String callID, ZegoCallUser callee) {
+            ///  Add your custom logic here.
+          },
+          onOutgoingCallDeclined: (String callID, ZegoCallUser callee) {
+            ///  Add your custom logic here.
+          },
+        ),
         appID: 1219133755 /*input your AppID*/,
         appSign:
             "4d20c8e94ac1dcc5b470d261999892b44157315ec4de62ea8648a90319f11414" /*input your AppSign*/,
