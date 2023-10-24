@@ -4,8 +4,9 @@ import 'package:zego_uikit_prebuilt_call/zego_uikit_prebuilt_call.dart';
 import 'package:zego_uikit_signaling_plugin/zego_uikit_signaling_plugin.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.navigatorKey});
+  const MyHomePage({super.key, required this.navigatorKey, required this.user});
   final GlobalKey<NavigatorState> navigatorKey;
+  final String user;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -29,7 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
             const SizedBox(
               height: 300,
             ),
-            const Text("Enter User ID"),
+            const Text("Enter User ID to call"),
             const SizedBox(
               height: 5,
             ),
@@ -52,8 +53,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   MaterialPageRoute(
                       builder: (context) => Vc(
                           navigatorKey: widget.navigatorKey,
-                          localUsername: userid.text.toString(),
-                          localUserId: userid.text.toString(),
+                          localUsername: widget.user,
+                          localUserId: widget.user,
                           roomId: "12345"))),
               iconSize: Size.fromRadius(20),
               callID: "12345",
@@ -65,30 +66,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   name: userid.text.toString(),
                 ),
               ],
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                      builder: (context) => Vc(
-                          navigatorKey: widget.navigatorKey,
-                          localUsername: userid.text.toString(),
-                          localUserId: userid.text.toString(),
-                          roomId: "12345")),
-                );
-              },
-              child: Container(
-                height: 30,
-                width: 100,
-                decoration: const BoxDecoration(
-                    color: Colors.green,
-                    borderRadius: BorderRadius.all(Radius.circular(8.0))),
-                child: const Center(
-                    child: Text(
-                  "Join",
-                  style: TextStyle(color: Colors.white),
-                )),
-              ),
             ),
           ],
         ),
@@ -104,13 +81,11 @@ class _MyHomePageState extends State<MyHomePage> {
     /// We recommend calling this method as soon as the user logs in to your app.
     ZegoUIKitPrebuiltCallInvitationService().init(
         events: ZegoUIKitPrebuiltCallInvitationEvents(),
-        androidNotificationConfig: ZegoAndroidNotificationConfig(
-            channelID: "Suharsh", channelName: "Suharsh"),
         appID: 1219133755 /*input your AppID*/,
         appSign:
             "4d20c8e94ac1dcc5b470d261999892b44157315ec4de62ea8648a90319f11414" /*input your AppSign*/,
-        userID: "Suharsh",
-        userName: "Suharsh",
+        userID: widget.user,
+        userName: widget.user,
         plugins: [ZegoUIKitSignalingPlugin()],
         controller: callInvitationController,
         requireConfig: (ZegoCallInvitationData data) {

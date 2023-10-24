@@ -7,6 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:video_call_firebase1/auth_service.dart';
+import 'package:video_call_firebase1/firsthomepage.dart';
 import 'package:video_call_firebase1/homepage.dart';
 import 'package:video_call_firebase1/signup_screen.dart';
 
@@ -161,7 +162,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => MyHomePage(
+                                          builder: (context) => FirstHomePage(
                                               navigatorKey:
                                                   widget.navigatorKey)));
                                 }
@@ -248,7 +249,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => MyHomePage(
+                                    builder: (context) => FirstHomePage(
                                           navigatorKey: widget.navigatorKey,
                                         )));
                           },
