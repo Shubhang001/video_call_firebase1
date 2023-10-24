@@ -48,24 +48,27 @@ class _MyHomePageState extends State<MyHomePage> {
             const SizedBox(
               height: 15,
             ),
-            ZegoSendCallInvitationButton(
-              onPressed: (code, message, p2) => Navigator.of(context).push(
-                  MaterialPageRoute(
-                      builder: (context) => Vc(
-                          navigatorKey: widget.navigatorKey,
-                          localUsername: widget.user,
-                          localUserId: widget.user,
-                          roomId: "12345"))),
-              iconSize: Size.fromRadius(20),
-              callID: "12345",
-              isVideoCall: true,
-              resourceID: "zegouikit_call", // For offline call notification
-              invitees: [
-                ZegoUIKitUser(
-                  id: userid.text.toString(),
-                  name: userid.text.toString(),
-                ),
-              ],
+            SizedBox(
+              height: 200,
+              child: ZegoSendCallInvitationButton(
+                onPressed: (code, message, p2) => Navigator.of(context).push(
+                    MaterialPageRoute(
+                        builder: (context) => Vc(
+                            navigatorKey: widget.navigatorKey,
+                            localUsername: widget.user,
+                            localUserId: widget.user,
+                            roomId: "12345"))),
+                iconSize: Size.fromRadius(20),
+                callID: "12345",
+                isVideoCall: true,
+                resourceID: "zegouikit_call", // For offline call notification
+                invitees: [
+                  ZegoUIKitUser(
+                    id: userid.text.toString(),
+                    name: userid.text.toString(),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
