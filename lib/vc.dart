@@ -3,16 +3,15 @@ import 'package:zego_uikit_prebuilt_call/zego_uikit_prebuilt_call.dart';
 import 'package:zego_uikit_signaling_plugin/zego_uikit_signaling_plugin.dart';
 
 class Vc extends StatefulWidget {
-  const Vc(
-      {super.key,
-      required this.roomId,
-      required this.localUserId,
-      required this.localUsername,
-      required this.navigatorKey});
+  const Vc({
+    super.key,
+    required this.roomId,
+    required this.localUserId,
+    required this.localUsername,
+  });
   final String roomId;
   final String localUserId;
   final String localUsername;
-  final GlobalKey<NavigatorState> navigatorKey;
 
   @override
   State<Vc> createState() => _VcState();

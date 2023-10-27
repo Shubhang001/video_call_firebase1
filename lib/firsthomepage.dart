@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:video_call_firebase1/homepage.dart';
 
 class FirstHomePage extends StatefulWidget {
-  const FirstHomePage({super.key, required this.navigatorKey});
-  final GlobalKey<NavigatorState> navigatorKey;
+  const FirstHomePage({super.key});
 
   @override
   State<FirstHomePage> createState() => _FirstHomePageState();
@@ -43,7 +42,6 @@ class _FirstHomePageState extends State<FirstHomePage> {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                       builder: (context) => MyHomePage(
-                            navigatorKey: widget.navigatorKey,
                             user: userid.text.toString(),
                           )),
                 );

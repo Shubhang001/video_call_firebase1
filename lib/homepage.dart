@@ -4,8 +4,8 @@ import 'package:zego_uikit_prebuilt_call/zego_uikit_prebuilt_call.dart';
 import 'package:zego_uikit_signaling_plugin/zego_uikit_signaling_plugin.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.navigatorKey, required this.user});
-  final GlobalKey<NavigatorState> navigatorKey;
+  const MyHomePage({super.key, required this.user});
+
   final String user;
 
   @override
@@ -54,7 +54,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: (code, message, p2) => Navigator.of(context).push(
                     MaterialPageRoute(
                         builder: (context) => Vc(
-                            navigatorKey: widget.navigatorKey,
                             localUsername: widget.user,
                             localUserId: widget.user,
                             roomId: "12345"))),
@@ -92,7 +91,6 @@ class _MyHomePageState extends State<MyHomePage> {
             ///  Add your custom logic here.
           },
           onIncomingCallAcceptButtonPressed: () => Vc(
-              navigatorKey: widget.navigatorKey,
               localUsername: userid.text.toString(),
               localUserId: userid.text.toString(),
               roomId: "12345"),
